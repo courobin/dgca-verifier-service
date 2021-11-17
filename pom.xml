@@ -34,7 +34,6 @@
     <liquibase.version>4.3.3</liquibase.version>
     <springdoc.version>1.5.12</springdoc.version>
     <junit.version>5.8.1</junit.version>
-    <junit.vintage.version>5.8.1</junit.vintage.version>
     <pivotal.cfenv.version>2.3.0</pivotal.cfenv.version>
     <mapstruct.version>1.4.2.Final</mapstruct.version>
     <mockito.version>4.0.0</mockito.version>
@@ -183,11 +182,6 @@
       <artifactId>junit-jupiter-api</artifactId>
       <version>${junit.version}</version>
       <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.junit.vintage</groupId>
-      <artifactId>junit-vintage-engine</artifactId>
-      <version>${junit.vintage.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
