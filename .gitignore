@@ -46,3 +46,5 @@ build/
 .DS_STORE
 
 .settings.xml
+
+/deployment/

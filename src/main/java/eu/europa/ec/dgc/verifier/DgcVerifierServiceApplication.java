@@ -30,6 +30,8 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
  * The Application class.
  */
 @SpringBootApplication
+@ComponentScan({"com.sap.cloud.sdk", "eu.europa.ec.dgc.verifier"})
+@ServletComponentScan({"com.sap.cloud.sdk", "eu.europa.ec.dgc.verifier"})
 @EnableConfigurationProperties(DgcConfigProperties.class)
 public class DgcVerifierServiceApplication extends SpringBootServletInitializer {
 
