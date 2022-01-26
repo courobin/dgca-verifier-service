@@ -42,7 +42,7 @@ spec:
         - name: dockercred
       containers:
         - name: verifier-service
-          image: rc90/verifier22:latest
+          image: ghcr.io/courobin/dgca-verifier-service:latest
           imagePullPolicy: Always
           env:
             - name: SPRING_PROFILES_ACTIVE
@@ -50,11 +50,11 @@ spec:
             - name: DGC_GATEWAY_CONNECTOR_TLSKEYSTORE_PATH
               value: "false"
             - name: SPRING_DATASOURCE_URL
-              value: "jdbc:postgresql://100.70.120.84:5432/postgresdb"
+              value: ${DATABASE_URL}
             - name: SPRING_DATASOURCE_USERNAME
-              value: "admin"
+              value: ${DATABASE_USER}
             - name: SPRING_DATASOURCE_PASSWORD
-              value: "test123"
+              value: ${DATABASE_PASSWORD}
             - name: LOGGING_LEVEL_ROOT
               value: DEBUG
           ports:
