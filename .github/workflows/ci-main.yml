@@ -59,3 +59,7 @@ jobs:
       with:
         config: ${{ secrets.DEV_KUBECONFIG }}
         command: apply -n dgca-test -f ./k8s/dev_deployment.yaml
+      env: 
+        DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        DATABASE_USER: ${{ secrets.USER }}
+        DATABASE_PASSWORD: ${{ secrets.PASSWORD }}
