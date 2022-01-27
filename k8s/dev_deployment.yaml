@@ -39,10 +39,10 @@ spec:
           secret:
             secretName: uaa-service-binding-verifier
       imagePullSecrets:
-        - name: regcred
+        - name: oldregcred
       containers:
         - name: verifier-service
-          image: ghcr.io/courobin/dgca-verifier-service:latest
+          image: docker.pkg.github.com/courobin/dgca-verifier-service:latest
           imagePullPolicy: Always
           env:
             - name: SPRING_PROFILES_ACTIVE
