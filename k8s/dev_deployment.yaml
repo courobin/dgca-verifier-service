@@ -39,7 +39,7 @@ spec:
           secret:
             secretName: uaa-service-binding-verifier
       imagePullSecrets:
-        - name: dockercred
+        - name: regcred
       containers:
         - name: verifier-service
           image: ghcr.io/courobin/dgca-verifier-service:latest
