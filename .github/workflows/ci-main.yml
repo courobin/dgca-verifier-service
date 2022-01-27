@@ -58,10 +58,5 @@ jobs:
     - uses: steebchen/kubectl@v2.0.0
       with:
         config: ${{ secrets.DEV_KUBECONFIG }}
-        command: apply -n dgca-test -f ./k8s/postgresdb.yaml
-
-    - uses: steebchen/kubectl@v2.0.0
-      with:
-        config: ${{ secrets.DEV_KUBECONFIG }}
         command: apply -n dgca-test -f ./k8s/dev_deployment.yaml
     
