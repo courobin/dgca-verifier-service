@@ -50,16 +50,16 @@ spec:
             - name: DGC_GATEWAY_CONNECTOR_TLSKEYSTORE_PATH
               value: "false"
             - name: SPRING_DATASOURCE_URL
-              value: jdbc:postgresql://100.70.120.84:5432/postgresdb
+              value: jdbc:postgresql://db-verifier/postgresdb
             - name: SPRING_DATASOURCE_USERNAME
               valueFrom:
                 configMapKeyRef:
-                  name: postgres-config
+                  name: dgca-verifier
                   key: POSTGRES_USER
             - name: SPRING_DATASOURCE_PASSWORD
               valueFrom:
                 configMapKeyRef:
-                  name: postgres-config
+                  name: dgca-verifier
                   key: POSTGRES_PASSWORD
            # - name: LOGGING_LEVEL_ROOT
            #   value: DEBUG
