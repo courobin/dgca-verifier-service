@@ -55,8 +55,8 @@ spec:
               value: ${DATABASE_USER}
             - name: SPRING_DATASOURCE_PASSWORD
               value: ${DATABASE_PASSWORD}
-            - name: LOGGING_LEVEL_ROOT
-              value: DEBUG
+           # - name: LOGGING_LEVEL_ROOT
+           #   value: DEBUG
           ports:
             - name: http
               containerPort: 8080
