@@ -39,7 +39,7 @@ spec:
           secret:
             secretName: uaa-service-binding-verifier
       imagePullSecrets:
-        - name: oldregcred
+        - name: regcred
       containers:
         - name: verifier-service
           image: docker.pkg.github.com/courobin/dgca-verifier-service:latest
