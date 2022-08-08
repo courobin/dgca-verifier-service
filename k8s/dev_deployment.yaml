@@ -108,11 +108,11 @@ spec:
   secretName: destination-service-binding-verifier
   serviceInstanceName: destination-service-instance-verifier              
 ---
-apiVersion: servicecatalog.k8s.io/v1beta1
+apiVersion: services.cloud.sap.com/v1
 kind: ServiceBinding
 metadata:
   name: uaa-service-binding-verifier
   namespace: dgca-test
 spec:
-  instanceRef:
-    name: uaa-service-instance-verifier
+  serviceInstanceName: uaa-service-instance-verifier
+  secretRootKey: uaa-service-binding-verifier
