@@ -40,7 +40,7 @@
     <okhttp.version>4.9.2</okhttp.version>
     <shedlock.version>4.30.0</shedlock.version>
     <dgc.lib.version>1.1.8</dgc.lib.version>
-    <sap.cloud.sdk.version>3.60.0</sap.cloud.sdk.version>
+    <sap.cloud.sdk.version>3.73.0</sap.cloud.sdk.version>
     <slf4j.version>1.7.32</slf4j.version>
     <!-- plugins -->
     <plugin.checkstyle.version>3.1.2</plugin.checkstyle.version>
