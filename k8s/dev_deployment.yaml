@@ -63,23 +63,50 @@ spec:
             httpGet:
               path: /signercertificateStatus
               port: 8080
-
----
-apiVersion: servicecatalog.k8s.io/v1beta1
+              
+apiVersion: services.cloud.sap.com/v1
 kind: ServiceInstance
 metadata:
   name: uaa-service-instance-verifier
   namespace: dgca-test
 spec:
-  clusterServiceClassExternalName: xsuaa
-  clusterServicePlanExternalName: application
+  serviceOfferingName: xsuaa
+  servicePlanName: application
   parameters:
     xsappname: xsuaa-kyma-verifier
     tenant-mode: dedicated
     oauth2-configuration:
       redirect-uris:
         - https://*/**
+---
+apiVersion: services.cloud.sap.com/v1
+kind: ServiceBinding
+metadata:
+  name: uaa-service-binding-verifier
+  namespace: dgca-test
+spec:
+  secretName: uaa-service-binding-verifier
+  serviceInstanceName: uaa-service-instance-verifier
 
+---
+apiVersion: services.cloud.sap.com/v1
+kind: ServiceInstance
+metadata:
+  name: destination-service-instance-verifier
+  namespace: dgca-test
+spec:
+  externalName: destination
+  serviceOfferingName: destination
+  servicePlanName: lite
+---
+apiVersion: services.cloud.sap.com/v1
+kind: ServiceBinding
+metadata:
+  name: destination-service-binding-verifier
+  namespace: dgca-test
+spec:
+  secretName: destination-service-binding-verifier
+  serviceInstanceName: destination-service-instance-verifier              
 ---
 apiVersion: servicecatalog.k8s.io/v1beta1
 kind: ServiceBinding
@@ -89,23 +116,3 @@ metadata:
 spec:
   instanceRef:
     name: uaa-service-instance-verifier
-
----
-apiVersion: servicecatalog.k8s.io/v1beta1
-kind: ServiceInstance
-metadata:
-  name: destination-service-instance-verifier
-  namespace: dgca-test
-spec:
-  clusterServiceClassExternalName: destination
-  clusterServicePlanExternalName: lite
-
----
-apiVersion: servicecatalog.k8s.io/v1beta1
-kind: ServiceBinding
-metadata:
-  name: destination-service-binding-verifier
-  namespace: dgca-test
-spec:
-  instanceRef:
-    name: destination-service-instance-verifier
