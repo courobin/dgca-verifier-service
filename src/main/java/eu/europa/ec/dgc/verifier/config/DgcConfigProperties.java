@@ -31,9 +31,21 @@ public class DgcConfigProperties {
 
     private final CertificatesDownloader certificatesDownloader = new CertificatesDownloader();
 
+    private final TrustedIssuerDownloader trustedIssuerDownloader = new TrustedIssuerDownloader();
+
+    private String context = "";
+
     @Getter
     @Setter
     public static class CertificatesDownloader {
+        private Integer timeInterval;
+        private Integer lockLimit;
+    }
+
+    @Getter
+    @Setter
+    public static class TrustedIssuerDownloader {
+        private boolean enabled;
         private Integer timeInterval;
         private Integer lockLimit;
     }
